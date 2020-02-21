@@ -1,3 +1,5 @@
+package thomar2048.controller;
+
 import package2048.Jeu2048;
 
 import java.awt.event.KeyAdapter;

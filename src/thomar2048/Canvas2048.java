@@ -1,4 +1,7 @@
+package thomar2048;
+
 import package2048.Jeu2048;
+import thomar2048.controller.GameKeyListener;
 
 import java.awt.*;
 import java.util.Observable;

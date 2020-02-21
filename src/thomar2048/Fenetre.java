@@ -1,9 +1,9 @@
+package thomar2048;
+
 import package2048.Jeu2048;
+import thomar2048.controller.CloseWindow;
 
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 public class Fenetre extends Frame {
 
@@ -28,10 +28,6 @@ public class Fenetre extends Frame {
         if(jeu.estTermine()){
             this.add(restart, BorderLayout.SOUTH);
         }
-
-
-
-
 
         this.addWindowListener(new CloseWindow(this));
         setVisible(true);

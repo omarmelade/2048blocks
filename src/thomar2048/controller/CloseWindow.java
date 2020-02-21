@@ -1,5 +1,10 @@
+package thomar2048.controller;
+
+import thomar2048.*;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 
 public class CloseWindow extends WindowAdapter {
     private Fenetre f;
