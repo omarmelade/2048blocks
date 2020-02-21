@@ -1,4 +1,4 @@
-import thomar2048.Fenetre;
+import thomar2048.view.Fenetre;
 
 public class Main {
 

@@ -1,6 +1,6 @@
 package thomar2048.controller;
 
-import thomar2048.*;
+import thomar2048.view.Fenetre;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
