@@ -125,6 +125,6 @@ public class Canvas2048 extends Canvas implements Observer {
         g.setColor(new Color(173, 47, 33));
         g.fillRect(0,0,getWidth(),getHeight());
         g.setColor(Color.YELLOW);
-        g.drawString("ECHEC",170,200);
+        g.drawString("ECHEC",getWidth()/2-35,getHeight()/2);
     }
 }
