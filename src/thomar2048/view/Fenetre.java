@@ -14,32 +14,32 @@ public class Fenetre extends Frame implements Observer {
             HEIGHT = 600;
     private int nbCase = 4;
 
-
-    Jeu2048 jeu = new Jeu2048(nbCase,nbCase,8);
+                //Défini la taille et le but final du jeu.
+    Jeu2048 jeu = new Jeu2048(nbCase,nbCase,128);
 
 
     public Fenetre() {
         Frame f = new Frame();
         Canvas2048 cs48 = new Canvas2048(jeu);
-        // basic init
+            //basic init
         this.setSize(WIDTH, HEIGHT);
         this.setTitle("2048");
         this.setLayout(new BorderLayout());
         this.setBackground(Color.WHITE);
         this.add(cs48, BorderLayout.CENTER);
 
-        // restart button
+            //restart button.
         Button restart = new Button("Recommencer");
         restart.addActionListener(new RestartListener(jeu));
         this.add(restart, BorderLayout.SOUTH);
-
+            //Score
         ScoreText score = new ScoreText(jeu);
         jeu.addObserver(score);
 
         this.add(score, BorderLayout.NORTH);
 
         this.addWindowListener(new CloseWindow(this));
-        //setResizable(false);
+            //Rend visible les dessins.
         setVisible(true);
     }
 

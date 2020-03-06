@@ -9,12 +9,15 @@ import java.awt.event.KeyEvent;
 public class GameKeyListener extends KeyAdapter {
     private final Jeu2048 jeu;
 
+                //Constructeur
     public GameKeyListener(Jeu2048 jeu){
         this.jeu = jeu;
     }
 
     @Override
+                //fonction qui permet de jouer à notre jeu avec les fleches du clavier.
     public void keyPressed(KeyEvent e) {
+                //On test la direction de la fleche et on la renvoie dans la fonction lié au mouvement.
         switch (e.getKeyCode()){
             case KeyEvent.VK_UP:
                 jeu.decaler(Jeu2048.HAUT);

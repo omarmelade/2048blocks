@@ -11,7 +11,7 @@ public class Canvas2048 extends Canvas implements Observer {
 
 
     private final Jeu2048 jeu;
-
+                //Constructeur
     public Canvas2048(Jeu2048 jeu){
         this.jeu = jeu;
 
@@ -20,7 +20,7 @@ public class Canvas2048 extends Canvas implements Observer {
         this.setVisible(true);
     }
 
-
+                //Méthode paint qui nous permet de dessiner les cases et les nombres de notre jeu.
     public void paint(Graphics g){
         // font declaration
         Font myFont = new Font ("Roboto", 1, 18);
@@ -30,7 +30,7 @@ public class Canvas2048 extends Canvas implements Observer {
 
         int X,Y; X = 0; Y = 0;
         int nbcols = jeu.getNbCols();
-
+                //Double boucles "for" pour parcourir toute les cases du jeu.
         for(int i = 0; i < nbcols; i++){
             if(i != 0){ X = X+getWidth()/nbcols;}
 
@@ -47,15 +47,15 @@ public class Canvas2048 extends Canvas implements Observer {
                 // n'affiche pas les 0
                 if(tabI[j][i] != 0) {
                     int nb = tabI[j][i];
-                    // color les cases qui contiennent une valeur
+                    // color les cases qui contiennent une valeur.
                     colorCase(g, nb);
                     g.fillRect(X, Y, caseDim, caseDim);
-                    // affiche les valeurs dans les cases > 0
+                    // affiche les valeurs dans les cases > 0.
                     g.setColor(Color.BLACK);
                     g.setFont(myFont);
                     g.drawString(tabS[j][i], X + caseDim/2, Y + caseDim/2);
                 }
-
+                    //Défini si le joueur est gagnant ou non et renvoie la fonction approprié.
                 if(jeu.estVainquer()){
                     estVainqueur(g);
                 }else if(jeu.estTermine()){
@@ -64,7 +64,7 @@ public class Canvas2048 extends Canvas implements Observer {
 
 
             }
-            // remise a 0 pour changement de ligne
+            // remise a 0 pour changement de ligne.
             Y = 0;
         }
     }
