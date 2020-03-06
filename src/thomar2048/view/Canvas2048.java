@@ -37,22 +37,23 @@ public class Canvas2048 extends Canvas implements Observer {
             for(int j = 0; j < nbcols; j++){
                 if(j != 0){ Y = Y + getHeight()/nbcols;}
 
+                int caseDim = this.getWidth()/nbcols;
                 // dessine les carrés
                 g.setColor(Color.WHITE);
-                g.fillRect(X,Y,99,99);
+                g.fillRect(X,Y,caseDim,caseDim);
                 g.setColor(Color.BLACK);
-                g.drawRect(X,Y, 100,100);
+                g.drawRect(X,Y, caseDim,caseDim);
 
                 // n'affiche pas les 0
                 if(tabI[j][i] != 0) {
                     int nb = tabI[j][i];
                     // color les cases qui contiennent une valeur
-                    colorCase(g,nb);
-                    g.fillRect(X,Y,99,99);
+                    colorCase(g, nb);
+                    g.fillRect(X, Y, caseDim, caseDim);
                     // affiche les valeurs dans les cases > 0
                     g.setColor(Color.BLACK);
                     g.setFont(myFont);
-                    g.drawString(tabS[j][i], X + 45, Y + 50);
+                    g.drawString(tabS[j][i], X + caseDim/2, Y + caseDim/2);
                 }
 
                 if(jeu.estVainquer()){

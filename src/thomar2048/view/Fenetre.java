@@ -11,10 +11,12 @@ import java.util.Observer;
 
 public class Fenetre extends Frame implements Observer {
 
-    Jeu2048 jeu = new Jeu2048(4,4,64);
+    private final static int WIDTH = 600,
+            HEIGHT = 600;
+    private int nbCase = 4;
 
-    private final static int WIDTH = 400,
-            HEIGHT = 400;
+    Jeu2048 jeu = new Jeu2048(nbCase,nbCase,4);
+
 
     public Fenetre() {
         Frame f = new Frame();
@@ -32,6 +34,7 @@ public class Fenetre extends Frame implements Observer {
         this.add(restart, BorderLayout.SOUTH);
 
         this.addWindowListener(new CloseWindow(this));
+        //setResizable(false);
         setVisible(true);
     }
 
@@ -40,4 +43,5 @@ public class Fenetre extends Frame implements Observer {
     public void update(Observable o, Object arg) {
         System.out.println("update moi jeune fou");
     }
+
 }
