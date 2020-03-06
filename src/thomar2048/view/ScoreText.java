@@ -13,7 +13,7 @@ public class ScoreText extends Label implements Observer {
         this.jeu = jeu;
         this.setText(" SCORE : 0 ");
     }
-                //Permet de changer le score du jeu en fonction de la partie.
+                //Permet de changer le score du jeu en fonction de la partie. .
     @Override
     public void update(Observable o, Object arg) {
         this.setText(" SCORE : " + jeu.getScore());
