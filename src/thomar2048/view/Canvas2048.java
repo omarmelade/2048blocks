@@ -117,7 +117,8 @@ public class Canvas2048 extends Canvas implements Observer {
         g.setColor(new Color(48, 112, 57));
         g.fillRect(0,0,getWidth(),getHeight());
         g.setColor(Color.BLACK);
-        g.drawString("VICTOIRE",170,200);
+        g.drawString("VICTOIRE",getWidth()/2-50,getHeight()/2);
+
     }
 
     public void estPerdant(Graphics g){
